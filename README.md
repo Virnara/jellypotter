@@ -11,6 +11,17 @@ A Web-based Point of Sale and Ordering Management System for Jelly Potter bevera
 
 ## 📸 Project Preview
 
+<div align="center">
+  <div style="display: flex; overflow-x: auto; gap: 12px; padding-bottom: 10px;">
+    <img src="img/01_home.png" alt="Hero Section" width="650" style="border-radius: 8px;">
+    <img src="img/02_featured.png" alt="Ramuan Favorit" width="650" style="border-radius: 8px;">
+    <img src="img/03_menu.png" alt="Daftar Menu" width="650" style="border-radius: 8px;">
+    <img src="img/04_dashboard.png" alt="Dashboard Admin" width="650" style="border-radius: 8px;">
+    <img src="img/05_kasir.png" alt="Sistem Kasir POS" width="650" style="border-radius: 8px;">
+  </div>
+  <p><sub>↔️ <i>Geser ke kanan/kiri untuk melihat seluruh antarmuka aplikasi</i></sub></p>
+</div>
+
 ### Customer Ordering & Menu Catalog
 ![Menu Preview](img/064411_red_velvet.png)
 
