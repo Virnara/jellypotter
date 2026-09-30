@@ -20,12 +20,14 @@ A Web-based Point of Sale and Ordering Management System for Jelly Potter bevera
 </div>
 
 ### Customer Ordering & Menu Catalog
+
 <div align="center">
   <div style="display: flex; overflow-x: auto; gap: 12px; padding-bottom: 10px;">
         <img src="img/03_menu.png" alt="Daftar Menu" width="650" style="border-radius: 8px;">
   </div>
 
 ### Dashboard Management
+
 <div align="center">
   <div style="display: flex; overflow-x: auto; gap: 12px; padding-bottom: 10px;">
   <img src="img/04_dashboard.png" alt="Dashboard Admin" width="650" style="border-radius: 8px;">
