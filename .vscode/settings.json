@@ -1,0 +1,9 @@
+{
+    "php.validate.executablePath": "C:\\xampp\\php\\php.exe",
+    "php.executablePath": "C:\\xampp\\php\\php.exe",
+    "php.debug.executablePath": "C:\\xampp\\php\\php.exe",
+    "php.executables": [
+        "C:\\xampp\\php\\php.exe"
+    ]
+}</content>
+<parameter name="filePath">c:\xampp\htdocs\jelly_potter\.vscode\settings.json
