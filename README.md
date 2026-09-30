@@ -1,6 +1,3 @@
-Ini draf file `README.md` yang disesuaikan secara profesional mengikuti struktur, *style*, dan kredensial portofolio Anda. Anda bisa langsung menyalin seluruh isi kode markdown di bawah ini ke file `README.md` di repository GitHub Anda:
-
-```markdown
 # 🍹 Jelly Potter - Point of Sale (POS) System
 
 A Web-based Point of Sale and Ordering Management System for Jelly Potter beverage franchise, built with native PHP, MySQL, and AJAX.
