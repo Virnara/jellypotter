@@ -670,7 +670,7 @@ $total_menu = mysqli_num_rows($query);
                 btn.innerHTML = '🪄 Menambahkan...';
 
                 try {
-                    const response = await fetch('ajax_tambah_keranjang.php', {
+                    const response = await fetch('api/ajax_tambah_keranjang.php', {
                         method: 'POST',
                         body: new FormData(form),
                         headers: {
