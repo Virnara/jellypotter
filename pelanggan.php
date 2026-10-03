@@ -80,7 +80,7 @@ if (isset($_POST['tambah'])) {
     }
 }
 
-include 'layout/navbar.php';
+include 'includes/navbar.php';
 
 $q_total = mysqli_query($conn, "SELECT COUNT(*) total FROM pelanggan");
 $total_member = mysqli_fetch_assoc($q_total)['total'];

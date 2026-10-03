@@ -65,7 +65,7 @@ if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
 
-include 'layout/navbar.php';
+include 'includes/navbar.php';
 
 $status_notif = "";
 

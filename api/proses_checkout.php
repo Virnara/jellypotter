@@ -377,7 +377,7 @@ VALUES (?, ?, ?, ?, ?, ?, ?)"
     if ($metode_bayar === 'QRIS') {
         header("Location: qris.php?id=" . $id_pesanan_baru);
     } else {
-        header("Location: katalog.php?status=checkout_sukses");
+        header("Location: ../katalog.php?status=checkout_sukses");
     }
     exit;
 

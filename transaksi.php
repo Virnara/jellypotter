@@ -53,7 +53,7 @@ $d_laku = mysqli_fetch_assoc($q_laku);
 $menu_terlaris = htmlspecialchars($d_laku['nama_produk'] ?? 'Belum ada penjualan');
 $qty_terlaris = (int)($d_laku['qty'] ?? 0);
 
-include 'layout/navbar.php';
+include 'includes/navbar.php';
 ?>
 
 <!DOCTYPE html>

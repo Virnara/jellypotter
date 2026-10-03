@@ -12,7 +12,7 @@ if (strtolower($_SESSION['jabatan'] ?? '') !== 'admin') {
     exit;
 }
 
-include 'layout/navbar.php';
+include 'includes/navbar.php';
 
 $hari_ini = date('Y-m-d');
 

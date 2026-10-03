@@ -25,7 +25,7 @@ if (strtolower($_SESSION['jabatan']) !== 'admin') {
     exit;
 }
 
-include 'layout/navbar.php';
+include 'includes/navbar.php';
 
 $bulan_pilih = isset($_GET['bulan']) ? $_GET['bulan'] : date('m');
 $tahun_pilih = isset($_GET['tahun']) ? intval($_GET['tahun']) : date('Y');

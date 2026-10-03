@@ -14,7 +14,7 @@ if (!isset($_SESSION['jabatan']) || strtolower($_SESSION['jabatan']) !== 'admin'
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
-include 'layout/navbar.php';
+include 'includes/navbar.php';
 
 $query = mysqli_query($conn, "
     SELECT id_produk, nama_produk, harga, stok, foto

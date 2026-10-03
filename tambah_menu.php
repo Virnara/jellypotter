@@ -416,7 +416,7 @@ if (isset($_POST['simpan'])) {
 
 <body>
 
-    <?php include 'layout/navbar.php'; ?>
+    <?php include 'includes/navbar.php'; ?>
 
     <div class="page-container">
 
