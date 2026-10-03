@@ -1,6 +1,6 @@
-# 🍹 Jelly Potter - Point of Sale (POS) System
+# 🍹 Jelly Potter
 
-A Web-based Point of Sale and Ordering Management System for Jelly Potter beverage franchise, built with native PHP, MySQL, and AJAX.
+A Web-based Ordering and Franchise Management System for Jelly Potter beverage outlets, built with native PHP, MySQL, and AJAX.
 
 [![Live Demo](https://img.shields.io/badge/Live--Demo-InfinityFree-000000?style=for-the-badge&logo=php&logoColor=white)](http://jellypotter.infinityfreeapp.com/)
 [![GitHub Repository](https://img.shields.io/badge/Repository-jellypotter-blue?style=for-the-badge&logo=github)](https://github.com/Virnara/jellypotter)
@@ -23,21 +23,23 @@ A Web-based Point of Sale and Ordering Management System for Jelly Potter bevera
 
 <div align="center">
   <div style="display: flex; overflow-x: auto; gap: 12px; padding-bottom: 10px;">
-        <img src="img/03_menu.png" alt="Daftar Menu" width="650" style="border-radius: 8px;">
+    <img src="img/03_menu.png" alt="Daftar Menu" width="650" style="border-radius: 8px;">
   </div>
+</div>
 
 ### Dashboard Management
 
 <div align="center">
   <div style="display: flex; overflow-x: auto; gap: 12px; padding-bottom: 10px;">
-  <img src="img/04_dashboard.png" alt="Dashboard Admin" width="650" style="border-radius: 8px;">
-    <img src="img/05_kasir.png" alt="Sistem Kasir POS" width="650" style="border-radius: 8px;">
+    <img src="img/04_dashboard.png" alt="Dashboard Admin" width="650" style="border-radius: 8px;">
+    <img src="img/05_kasir.png" alt="Sistem Kasir" width="650" style="border-radius: 8px;">
   </div>
+</div>
 
 ---
 
 ## ✨ Overview
-**Jelly Potter POS System** is a dynamic web application designed to streamline order taking, cart management, and sales monitoring for beverage outlets.
+**Jelly Potter** is a dynamic web application designed to streamline order taking, cart management, and sales monitoring for beverage outlets.
 
 Built with native PHP and MySQL, the application enables interactive item additions without page reloads using AJAX, manages real-time order processing, and provides an administrative dashboard for monitoring business operations. The application is production-deployed on cloud hosting with remote database mapping.
 
@@ -54,9 +56,10 @@ This project aims to:
 
 ## 🚀 Features
 - **Interactive Menu Catalog:** Grid display of available drinks with responsive imagery and detailed pricing.
-- **Asynchronous Cart Management:** Dynamic item insertion using `ajax_tambah_keranjang.php` without refreshing the browser.
-- **Order Fetching & State Tracking:** Automated order retrieval (`fetch_pesanan.php`) for operational processing.
-- **CRUD Operations:** Complete data manipulation routines for updating menu items, managing orders, and deleting invalid entries (`edit.php`, `hapus.php`).
+- **Asynchronous Cart Management:** Dynamic item insertion using `api/ajax_tambah_keranjang.php` without refreshing the browser.
+- **Order Fetching & State Tracking:** Automated order retrieval (`api/fetch_pesanan.php`) for operational processing.
+- **Role-Based Authentication:** Dedicated login and session management for administrative and customer operations (`auth/`).
+- **Admin Management Panel:** Comprehensive management suite for tracking transactions, viewing sales reports, and managing menu items (`admin/`).
 - **Live Cloud Deployment:** Fully hosted on cloud infrastructure with custom database connections.
 
 ---
@@ -77,35 +80,45 @@ This project aims to:
 ## 📂 Project Structure
 ```text
 jellypotter/
-├── .vscode/
-│   └── settings.json
-├── img/
-│   ├── 064411_red_velvet.png
-│   └── 064422_taro.png
-├── ajax_tambah_keranjang.php
-├── dashboard.php
+├── admin/                  # Admin dashboard & management modules
+│   ├── dashboard.php
+│   ├── laporan.php
+│   ├── pelanggan.php
+│   ├── pesanan.php
+│   ├── tambah_menu.php
+│   ├── tampil.php
+│   └── transaksi.php
+├── api/                    # Background endpoints & AJAX handlers
+│   ├── ajax_tambah_keranjang.php
+│   ├── fetch_pesanan.php
+│   ├── proses_checkout.php
+│   └── proses_pesanan.php
+├── auth/                   # Authentication & session control
+│   ├── login.php
+│   ├── logout.php
+│   └── signup.php
+├── config/                 # Environment & database drivers
+│   ├── koneksi.php.example
+│   └── koneksi.php         (git-ignored)
+├── includes/               # Reusable UI layout components
+│   └── navbar_pengunjung.php
+├── img/                    # Static image assets & upload directories
+├── .gitignore
 ├── detail.php
 ├── edit.php
-├── fetch_pesanan.php
 ├── hapus.php
-├── koneksi.php
+├── index.php
+├── katalog.php
+├── keranjang.php
 └── README.md
+⚙️ Database Configuration & Setup
+1. Database Schema (jelly_db)
+Ensure your MySQL environment includes the required relational tables for menu items, customer transactions, and administrative accounts.
 
-```
+2. Local Connection (config/koneksi.php)
+For local execution using XAMPP/WAMP, copy config/koneksi.php.example to config/koneksi.php and configure your database connection driver:
 
----
-
-## ⚙️ Database Configuration & Setup
-
-### 1. Database Schema (`jelly_db`)
-
-Ensure your MySQL environment includes the required relational tables for menu items and sales transactions.
-
-### 2. Local Connection (`koneksi.php`)
-
-For local execution using XAMPP/WAMP, configure your database connection driver:
-
-```php
+PHP
 <?php
 $host = "localhost";
 $user = "root";
@@ -118,67 +131,53 @@ if (!$conn) {
     die("Koneksi gagal: " . mysqli_connect_error());
 }
 ?>
-
-```
-
----
-
-## 🛠️ Installation & Setup
-
-### 1. Repository Cloning
-
-```bash
+🛠️ Installation & Setup
+1. Repository Cloning
+Bash
 git clone [https://github.com/Virnara/jellypotter.git](https://github.com/Virnara/jellypotter.git)
 cd jellypotter
+2. Local Deployment (XAMPP)
+Move the jellypotter directory into your local web server root (C:/xampp/htdocs/jellypotter).
 
-```
+Open phpMyAdmin (http://localhost/phpmyadmin) and create a database named jelly_db.
 
-### 2. Local Deployment (XAMPP)
+Import your project .sql file into jelly_db.
 
-1. Move the `jellypotter` directory into your local web server root (`C:/xampp/htdocs/jellypotter`).
-2. Open **phpMyAdmin** (`http://localhost/phpmyadmin`) and create a database named `jelly_db`.
-3. Import your project `.sql` file into `jelly_db`.
-4. Configure `koneksi.php` with your local database credentials.
-5. Access the application in your browser at `http://localhost/jellypotter/dashboard.php`.
+Configure config/koneksi.php with your local database credentials.
 
----
+Access the application in your browser at http://localhost/jellypotter/index.php.
 
-## 🌐 Live Web Demo
-
+🌐 Live Web Demo
 The application is deployed live on cloud hosting and accessible online:
 
-👉 **[Access Live Demo Here](http://jellypotter.infinityfreeapp.com/)**
+👉 Access Live Demo Here
 
----
+🛣️ Roadmap & Future Enhancements
+[x] Responsive digital catalog and item detail views.
 
-## 🛣️ Roadmap & Future Enhancements
+[x] Asynchronous AJAX cart additions.
 
-* [x] Responsive digital catalog and item detail views.
-* [x] Asynchronous AJAX cart additions.
-* [x] Relational MySQL database structure for orders and inventory.
-* [ ] Role-based access control (RBAC) for Admin and Cashier logins.
-* [ ] PDF receipt generation for completed customer transactions.
-* [ ] Financial report analytics with visual charts (Chart.js).
+[x] Relational MySQL database structure for orders and inventory.
 
----
+[x] Modular PHP architecture (admin/, api/, auth/, config/, includes/).
 
-## 👨‍💻 Author
+[x] Role-based access control (RBAC) for Admin and User authentication.
 
-**Radel Virdiana**
-*Web Developer • IoT Developer*
+[ ] PDF receipt generation for completed customer transactions.
+
+[ ] Financial report analytics with visual charts (Chart.js).
+
+👨‍💻 Author
+Radel Virdiana
+Web Developer • IoT Developer
 
 Building practical, modern digital solutions combining software systems and embedded hardware technology.
 
-* 🌐 **Portfolio:** [virnara.github.io](https://virnara.github.io)
-* 🐙 **GitHub:** [@Virnara](https://github.com/Virnara)
-* 📺 **YouTube:** [@Virnara](https://youtube.com/@Virnara)
+🌐 Portfolio: virnara.github.io
 
----
+🐙 GitHub: @Virnara
 
-## 📄 License
+📺 YouTube: @Virnara
 
-This project is open-source and available under the [MIT License](https://www.google.com/search?q=LICENSE).
-
-```
-
-```
+📄 License
+This project is open-source and available under the MIT License.
