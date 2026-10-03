@@ -488,7 +488,7 @@ $total_menu = mysqli_num_rows($query);
 
 <body>
 
-    <?php include 'navbar_pengunjung.php'; ?>
+    <?php include 'includes/navbar_pengunjung.php'; ?>
 
     <div class="katalog-page">
 

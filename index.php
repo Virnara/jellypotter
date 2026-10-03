@@ -628,7 +628,7 @@ $query_rec = mysqli_query($conn, "
 </head>
 <body>
 
-<?php include 'navbar_pengunjung.php'; ?>
+<?php include 'includes/navbar_pengunjung.php'; ?>
 
 <!-- HERO -->
 <section class="hero" id="home">
