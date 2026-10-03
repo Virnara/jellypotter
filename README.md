@@ -111,14 +111,18 @@ jellypotter/
 ├── katalog.php
 ├── keranjang.php
 └── README.md
-⚙️ Database Configuration & Setup
-1. Database Schema (jelly_db)
+
+```
+---
+
+## ⚙️ Database Configuration & Setup
+**1. Database Schema (jelly_db)**
 Ensure your MySQL environment includes the required relational tables for menu items, customer transactions, and administrative accounts.
 
-2. Local Connection (config/koneksi.php)
+**2. Local Connection (config/koneksi.php)**
 For local execution using XAMPP/WAMP, copy config/koneksi.php.example to config/koneksi.php and configure your database connection driver:
 
-PHP
+```text
 <?php
 $host = "localhost";
 $user = "root";
@@ -131,28 +135,28 @@ if (!$conn) {
     die("Koneksi gagal: " . mysqli_connect_error());
 }
 ?>
-🛠️ Installation & Setup
-1. Repository Cloning
-Bash
+```
+---
+
+## 🛠️ Installation & Setup
+**1. Repository Cloning**
+```text
 git clone [https://github.com/Virnara/jellypotter.git](https://github.com/Virnara/jellypotter.git)
 cd jellypotter
-2. Local Deployment (XAMPP)
-Move the jellypotter directory into your local web server root (C:/xampp/htdocs/jellypotter).
+```
+**2. Local Deployment (XAMPP)**
+- Move the jellypotter directory into your local web server root (C:/xampp/htdocs/jellypotter).
+- Open phpMyAdmin (http://localhost/phpmyadmin) and create a database named jelly_db.
+- Import your project .sql file into jelly_db.
+- Configure config/koneksi.php with your local database credentials.
+- Access the application in your browser at http://localhost/jellypotter/index.php.
 
-Open phpMyAdmin (http://localhost/phpmyadmin) and create a database named jelly_db.
-
-Import your project .sql file into jelly_db.
-
-Configure config/koneksi.php with your local database credentials.
-
-Access the application in your browser at http://localhost/jellypotter/index.php.
-
-🌐 Live Web Demo
+## 🌐 Live Web Demo
 The application is deployed live on cloud hosting and accessible online:
 
-👉 Access Live Demo Here
+👉 **[Access Live Demo Here](http://jellypotter.infinityfreeapp.com/)**
 
-🛣️ Roadmap & Future Enhancements
+## 🛣️ Roadmap & Future Enhancements
 [x] Responsive digital catalog and item detail views.
 
 [x] Asynchronous AJAX cart additions.
@@ -167,9 +171,9 @@ The application is deployed live on cloud hosting and accessible online:
 
 [ ] Financial report analytics with visual charts (Chart.js).
 
-👨‍💻 Author
-Radel Virdiana
-Web Developer • IoT Developer
+## 👨‍💻 Author
+**Radel Virdiana**
+_Web Developer • IoT Developer_
 
 Building practical, modern digital solutions combining software systems and embedded hardware technology.
 
@@ -179,5 +183,5 @@ Building practical, modern digital solutions combining software systems and embe
 
 📺 YouTube: @Virnara
 
-📄 License
+## 📄 License
 This project is open-source and available under the MIT License.
