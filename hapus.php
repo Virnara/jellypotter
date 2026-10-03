@@ -15,7 +15,7 @@ include 'koneksi.php';
 |--------------------------------------------------------------------------
 */
 if (!isset($_SESSION['id_pegawai'])) {
-    header("Location: auth/login.php");
+    header("Location: ../auth/login.php");
     exit;
 }
 
@@ -27,7 +27,7 @@ if (!isset($_SESSION['id_pegawai'])) {
 if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > 1800) {
     session_unset();
     session_destroy();
-    header("Location: auth/login.php");
+    header("Location: ../auth/login.php");
     exit;
 }
 
@@ -50,7 +50,7 @@ if (strtolower($_SESSION['jabatan'] ?? '') !== 'admin') {
             background: '#FFFDF9',
             color: '#5C3A21'
         }).then(() => {
-            window.location.href = 'dashboard.php';
+            window.location.href = '../admin/dashboard.php';
         });
     </script>";
     exit;
@@ -62,7 +62,7 @@ if (strtolower($_SESSION['jabatan'] ?? '') !== 'admin') {
 |--------------------------------------------------------------------------
 */
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header("Location: tampil.php");
+    header("Location: ../admin/tampil.php");
     exit;
 }
 
@@ -87,7 +87,7 @@ if (
             background: '#FFFDF9',
             color: '#5C3A21'
         }).then(() => {
-            window.location.href = 'tampil.php';
+            window.location.href = '../admin/tampil.php';
         });
     </script>";
     exit;
@@ -101,7 +101,7 @@ if (
 $id = intval($_POST['id'] ?? 0);
 
 if ($id <= 0) {
-    header("Location: tampil.php");
+    header("Location: ../admin/tampil.php");
     exit;
 }
 
@@ -119,7 +119,7 @@ $stmt = mysqli_prepare(
 );
 
 if (!$stmt) {
-    header("Location: tampil.php");
+    header("Location: ../admin/tampil.php");
     exit;
 }
 
@@ -129,7 +129,7 @@ $result = mysqli_stmt_get_result($stmt);
 
 if (!$result || mysqli_num_rows($result) === 0) {
     mysqli_stmt_close($stmt);
-    header("Location: tampil.php");
+    header("Location: ../admin/tampil.php");
     exit;
 }
 
@@ -150,7 +150,7 @@ $stmt = mysqli_prepare(
 );
 
 if (!$stmt) {
-    header("Location: tampil.php");
+    header("Location: ../admin/tampil.php");
     exit;
 }
 
@@ -177,7 +177,7 @@ if (mysqli_stmt_execute($stmt)) {
     mysqli_stmt_close($stmt);
 
     header(
-        "Location: tampil.php?status=terhapus&menu=" .
+        "Location: ../admin/tampil.php?status=terhapus&menu=" .
         urlencode($nama)
     );
     exit;
@@ -185,6 +185,6 @@ if (mysqli_stmt_execute($stmt)) {
 
 mysqli_stmt_close($stmt);
 
-header("Location: tampil.php");
+header("Location: ../admin/tampil.php");
 exit;
 ?>

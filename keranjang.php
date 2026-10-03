@@ -730,7 +730,7 @@ if (!empty($_SESSION['keranjang'])) {
                     return;
                 }
 
-                form.action = 'api/proses_checkout.php';
+                form.action = '../api/proses_checkout.php';
                 form.method = 'POST';
 
                 document.getElementById('checkoutBtn').disabled = true;

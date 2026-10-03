@@ -15,7 +15,7 @@ include 'koneksi.php';
 |--------------------------------------------------------------------------
 */
 if (!isset($_SESSION['id_pegawai'])) {
-    header("Location: auth/login.php");
+    header("Location: ../auth/login.php");
     exit;
 }
 
@@ -27,7 +27,7 @@ if (!isset($_SESSION['id_pegawai'])) {
 if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > 1800) {
     session_unset();
     session_destroy();
-    header("Location: auth/login.php");
+    header("Location: ../auth/login.php");
     exit;
 }
 
@@ -50,7 +50,7 @@ if (strtolower($_SESSION['jabatan'] ?? '') !== 'admin') {
             background: '#FFFDF9',
             color: '#5C3A21'
         }).then(() => {
-            window.location.href = 'dashboard.php';
+            window.location.href = '../admin/dashboard.php';
         });
     </script>";
     exit;
@@ -77,7 +77,7 @@ $status_notif = "";
 $id_produk = intval($_GET['id'] ?? 0);
 
 if ($id_produk <= 0) {
-    header("Location: tampil.php");
+    header("Location: ../admin/tampil.php");
     exit;
 }
 
@@ -87,7 +87,7 @@ $stmt = mysqli_prepare(
 );
 
 if (!$stmt) {
-    header("Location: tampil.php");
+    header("Location: ../admin/tampil.php");
     exit;
 }
 
@@ -552,7 +552,7 @@ if (isset($_POST['update']) && $d) {
                                 ✨ Simpan Perubahan
                             </button>
 
-                            <a href="tampil.php" class="btn-back">
+                            <a href="../admin/tampil.php" class="btn-back">
                                 ← Kembali ke Kelola Menu
                             </a>
                         </div>
@@ -572,7 +572,7 @@ if (isset($_POST['update']) && $d) {
                 "title" => "Berhasil! ✨",
                 "text" => "Menu berhasil diperbarui.",
                 "icon" => "success",
-                "redirect" => "tampil.php"
+                "redirect" => "../admin/tampil.php"
             ],
             "gagal" => [
                 "title" => "Oops!",
@@ -598,7 +598,7 @@ if (isset($_POST['update']) && $d) {
                 "title" => "Data Tidak Ditemukan 😢",
                 "text" => "Menu ini sudah tidak tersedia.",
                 "icon" => "warning",
-                "redirect" => "tampil.php"
+                "redirect" => "../admin/tampil.php"
             ]
         ];
 

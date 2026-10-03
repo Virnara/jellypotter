@@ -78,9 +78,9 @@ if (isset($_POST['login']) && empty($error_pesan)) {
                     $_SESSION['last_activity'] = time();
 
                     if (strtolower($data['jabatan']) === 'admin') {
-                        header("Location: dashboard.php");
+                        header("Location: ../admin/dashboard.php");
                     } else {
-                        header("Location: pesanan.php");
+                        header("Location: ../admin/pesanan.php");
                     }
                     exit;
                 }

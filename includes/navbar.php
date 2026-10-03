@@ -11,18 +11,18 @@ $menu_items = [];
 
 if ($is_admin) {
     $menu_items = [
-        ['file' => 'dashboard.php', 'label' => 'Dashboard', 'icon' => 'fa-chart-line'],
-        ['file' => 'tampil.php', 'label' => 'Menu', 'icon' => 'fa-mug-hot'],
-        ['file' => 'pesanan.php', 'label' => 'Pesanan', 'icon' => 'fa-cart-shopping'],
-        ['file' => 'pelanggan.php', 'label' => 'Member', 'icon' => 'fa-users'],
-        ['file' => 'transaksi.php', 'label' => 'Transaksi', 'icon' => 'fa-receipt'],
-        ['file' => 'laporan.php', 'label' => 'Laporan', 'icon' => 'fa-file-lines'],
+        ['file' => '../admin/dashboard.php', 'label' => 'Dashboard', 'icon' => 'fa-chart-line'],
+        ['file' => '../admin/tampil.php', 'label' => 'Menu', 'icon' => 'fa-mug-hot'],
+        ['file' => '../admin/pesanan.php', 'label' => 'Pesanan', 'icon' => 'fa-cart-shopping'],
+        ['file' => '../admin/pelanggan.php', 'label' => 'Member', 'icon' => 'fa-users'],
+        ['file' => '../admin/transaksi.php', 'label' => 'Transaksi', 'icon' => 'fa-receipt'],
+        ['file' => '../admin/laporan.php', 'label' => 'Laporan', 'icon' => 'fa-file-lines'],
     ];
 } else {
     $menu_items = [
-        ['file' => 'pesanan.php', 'label' => 'Pesanan', 'icon' => 'fa-cart-shopping'],
-        ['file' => 'pelanggan.php', 'label' => 'Member', 'icon' => 'fa-users'],
-        ['file' => 'transaksi.php', 'label' => 'Transaksi', 'icon' => 'fa-receipt'],
+        ['file' => '../admin/pesanan.php', 'label' => 'Pesanan', 'icon' => 'fa-cart-shopping'],
+        ['file' => '../admin/pelanggan.php', 'label' => 'Member', 'icon' => 'fa-users'],
+        ['file' => '../admin/transaksi.php', 'label' => 'Transaksi', 'icon' => 'fa-receipt'],
     ];
 }
 ?>
@@ -244,7 +244,7 @@ if ($is_admin) {
 </style>
 
 <nav class="jp-navbar">
-    <a href="<?= $is_admin ? 'dashboard.php' : 'pesanan.php'; ?>" class="jp-logo">
+    <a href="<?= $is_admin ? '../admin/dashboard.php' : '../admin/pesanan.php'; ?>" class="jp-logo">
         Jelly Potter 🪄
     </a>
 
@@ -301,7 +301,7 @@ if ($is_admin) {
             cancelButtonText: 'Batal'
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = 'auth/logout.php';
+                window.location.href = '../auth/logout.php';
             }
         });
     }

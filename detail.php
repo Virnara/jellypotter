@@ -3,12 +3,12 @@ session_start();
 include 'koneksi.php';
 
 if (!isset($_SESSION['id_pegawai'])) {
-    header("location: auth/login.php");
+    header("location: ../auth/login.php");
     exit;
 }
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    header("location: transaksi.php");
+    header("location: ../admin/transaksi.php");
     exit;
 }
 
@@ -47,7 +47,7 @@ if (!$query_transaksi || mysqli_num_rows($query_transaksi) === 0) {
             background: '#FFFDF9',
             color: '#5C3A21'
         }).then(() => {
-            window.location.href = 'transaksi.php';
+            window.location.href = '../admin/transaksi.php';
         });
     </script>
     ";
@@ -584,7 +584,7 @@ if (!empty($no_wa)) {
                     🖨️ Cetak Nota
                 </button>
 
-                <a href="pesanan.php" class="btn btn-back">
+                <a href="../admin/pesanan.php" class="btn btn-back">
                     ← Order Baru
                 </a>
 

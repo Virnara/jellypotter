@@ -18,7 +18,7 @@ include '../koneksi.php';
 if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > 1800) {
     session_unset();
     session_destroy();
-    header("Location: login.php");
+    header("Location: ../auth/login.php");
     exit;
 }
 
@@ -375,7 +375,7 @@ VALUES (?, ?, ?, ?, ?, ?, ?)"
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 
     if ($metode_bayar === 'QRIS') {
-        header("Location: qris.php?id=" . $id_pesanan_baru);
+        header("Location: ../qris.php?id=" . $id_pesanan_baru);
     } else {
         header("Location: ../katalog.php?status=checkout_sukses");
     }

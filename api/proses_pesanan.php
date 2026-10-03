@@ -8,14 +8,14 @@ include '../koneksi.php';
 |--------------------------------------------------------------------------
 */
 if (!isset($_SESSION['id_pegawai'])) {
-    header("location: login.php");
+    header("location: ../auth/login.php");
     exit;
 }
 
 if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > 1800) {
     session_unset();
     session_destroy();
-    header("location: login.php");
+    header("location: ../auth/login.php");
     exit;
 }
 $_SESSION['last_activity'] = time();
@@ -25,7 +25,7 @@ $_SESSION['last_activity'] = time();
 | ALERT FUNCTION (SAFE)
 |--------------------------------------------------------------------------
 */
-function showAlert($title, $text, $icon, $redirect = 'pesanan.php')
+function showAlert($title, $text, $icon, $redirect = '../admin/pesanan.php')
 {
     $title = json_encode($title);
     $text = json_encode($text);
@@ -75,7 +75,7 @@ function showAlert($title, $text, $icon, $redirect = 'pesanan.php')
 |--------------------------------------------------------------------------
 */
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header("location: pesanan.php");
+    header("location: ../admin/pesanan.php");
     exit;
 }
 
@@ -330,7 +330,7 @@ try {
         'Transaksi Berhasil! 🎉',
         $pesan_sukses,
         'success',
-        "detail.php?id=$id_jual"
+        "../detail.php?id=$id_jual"
     );
 
 } catch (Exception $e) {

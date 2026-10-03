@@ -15,7 +15,7 @@ include '../koneksi.php';
 |--------------------------------------------------------------------------
 */
 if (!isset($_SESSION['id_pegawai'])) {
-    header("Location: auth/login.php");
+    header("Location: ../auth/login.php");
     exit;
 }
 
@@ -27,7 +27,7 @@ if (!isset($_SESSION['id_pegawai'])) {
 if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > 1800) {
     session_unset();
     session_destroy();
-    header("Location: auth/login.php");
+    header("Location: ../auth/login.php");
     exit;
 }
 
@@ -50,7 +50,7 @@ if (strtolower($_SESSION['jabatan'] ?? '') !== 'admin') {
             background: '#FFFDF9',
             color: '#5C3A21'
         }).then(() => {
-            window.location.href = 'dashboard.php';
+            window.location.href = '../admin/dashboard.php';
         });
     </script>";
     exit;
@@ -596,7 +596,7 @@ if (isset($_POST['signup'])) {
                                 type="text"
                                 name="username"
                                 class="signup-input"
-                                placeholder="Contoh: radwell_admin"
+                                placeholder="Contoh: admin"
                                 required
                                 maxlength="30"
                             >
@@ -656,7 +656,7 @@ if (isset($_POST['signup'])) {
             color: '#5C3A21'
         }).then(() => {
             <?php if ($status === 'success'): ?>
-                window.location.href = 'dashboard.php';
+                window.location.href = '../admin/dashboard.php';
             <?php endif; ?>
         });
     </script>
