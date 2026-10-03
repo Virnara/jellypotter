@@ -7,7 +7,7 @@ if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
 }
 
 session_start();
-include 'koneksi.php';
+include 'config/koneksi.php';
 
 /*
 |--------------------------------------------------------------------------
