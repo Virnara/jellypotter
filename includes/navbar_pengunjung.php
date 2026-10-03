@@ -242,7 +242,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                     blur(8px)
                 `
             }).then(() => {
-                window.location.href = "login.php";
+                window.location.href = "auth/login.php";
             });
 
             clickCount = 0;

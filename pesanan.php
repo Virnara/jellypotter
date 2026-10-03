@@ -7,7 +7,7 @@ if (empty($_SESSION['csrf_token'])) {
 }
 
 if (!isset($_SESSION['id_pegawai'])) {
-    header("location: login.php");
+    header("location: auth/login.php");
     exit;
 }
 

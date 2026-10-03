@@ -3,7 +3,7 @@ session_start();
 include 'koneksi.php';
 
 if (!isset($_SESSION['id_pegawai'])) {
-    header("location: login.php");
+    header("location: auth/login.php");
     exit;
 }
 
@@ -476,7 +476,7 @@ for ($i = 29; $i >= 0; $i--) {
                 <p>Jelly Potter Command Center & Daily Performance</p>
             </div>
 
-            <a href="signup.php" class="btn-recruit">
+            <a href="auth/signup.php" class="btn-recruit">
                 🪄 Recruit New Crew
             </a>
         </div>

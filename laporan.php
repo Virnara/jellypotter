@@ -3,7 +3,7 @@ session_start();
 include 'koneksi.php';
 
 if (!isset($_SESSION['id_pegawai'])) {
-    header("location: login.php");
+    header("location: auth/login.php");
     exit;
 }
 

@@ -15,7 +15,7 @@ include 'koneksi.php';
 |--------------------------------------------------------------------------
 */
 if (!isset($_SESSION['id_pegawai'])) {
-    header("Location: login.php");
+    header("Location: auth/login.php");
     exit;
 }
 
@@ -27,7 +27,7 @@ if (!isset($_SESSION['id_pegawai'])) {
 if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > 1800) {
     session_unset();
     session_destroy();
-    header("Location: login.php");
+    header("Location: auth/login.php");
     exit;
 }
 
